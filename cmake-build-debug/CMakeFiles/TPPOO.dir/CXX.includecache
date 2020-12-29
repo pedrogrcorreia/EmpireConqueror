@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Pedro Correia/Desktop/TPPOO/Continente.h
+Territorio.h
+C:/Users/Pedro Correia/Desktop/TPPOO/Territorio.h
+
+C:/Users/Pedro Correia/Desktop/TPPOO/Ilha.h
+Territorio.h
+C:/Users/Pedro Correia/Desktop/TPPOO/Territorio.h
+
+C:/Users/Pedro Correia/Desktop/TPPOO/Mundo.cpp
+Mundo.h
+C:/Users/Pedro Correia/Desktop/TPPOO/Mundo.h
+sstream
+-
+
+C:/Users/Pedro Correia/Desktop/TPPOO/Mundo.h
+Territorio.h
+C:/Users/Pedro Correia/Desktop/TPPOO/Territorio.h
+TiposContinente.h
+C:/Users/Pedro Correia/Desktop/TPPOO/TiposContinente.h
+TiposIlha.h
+C:/Users/Pedro Correia/Desktop/TPPOO/TiposIlha.h
+vector
+-
+map
+-
+
+C:/Users/Pedro Correia/Desktop/TPPOO/Territorio.h
+string
+-
+
+C:/Users/Pedro Correia/Desktop/TPPOO/TiposContinente.h
+Continente.h
+C:/Users/Pedro Correia/Desktop/TPPOO/Continente.h
+
+C:/Users/Pedro Correia/Desktop/TPPOO/TiposIlha.h
+Ilha.h
+C:/Users/Pedro Correia/Desktop/TPPOO/Ilha.h
+
