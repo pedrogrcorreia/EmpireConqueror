@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Pedro Correia/Desktop/TPPOO/Imperio.cpp
+Imperio.h
+C:/Users/Pedro Correia/Desktop/TPPOO/Imperio.h
+sstream
+-
+iostream
+-
+
+C:/Users/Pedro Correia/Desktop/TPPOO/Imperio.h
+vector
+-
+Territorio.h
+C:/Users/Pedro Correia/Desktop/TPPOO/Territorio.h
+Tecnologias.h
+C:/Users/Pedro Correia/Desktop/TPPOO/Tecnologias.h
+
+C:/Users/Pedro Correia/Desktop/TPPOO/Tecnologias.h
+map
+-
+string
+-
+
+C:/Users/Pedro Correia/Desktop/TPPOO/Territorio.h
+string
+-
+iostream
+-
+
