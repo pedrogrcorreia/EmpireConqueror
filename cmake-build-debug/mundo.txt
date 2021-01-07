@@ -1,0 +1,4 @@
+cria duna 2
+merda com mel  
+cria planicie 4
+cria territorio 5
