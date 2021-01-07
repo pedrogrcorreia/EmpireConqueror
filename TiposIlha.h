@@ -12,12 +12,14 @@ class Refugio: public Ilha{
     static int count;
 public:
     Refugio();
+    virtual int addOuro();
 };
 
 class Pescaria: public Ilha{
     static int count;
 public:
     Pescaria();
+    virtual int addProd();
 };
 
 

@@ -9,26 +9,19 @@
 #include "TiposIlha.h"
 #include <vector>
 #include <map>
-using namespace std;
+#include <string>
 
+using namespace std;
 
 class Mundo {
     vector<Territorio*> m;
-    map<string, Territorio*> terr = { {"territorioinicial", new TerritorioInicial()},
-                                      {"planicie", new Planicie()},
-                                      {"montanha", new Montanha()},
-                                      {"fortaleza", new Fortaleza()},
-                                      {"mina", new Mina()},
-                                      {"duna", new Duna()},
-                                      {"castelo", new Castelo()},
-                                      {"refugio", new Refugio()},
-                                      {"pescaria", new Pescaria()}
-
-    };
 public:
-    bool addTerritorio(string n);
+    ~Mundo();
+    bool addTerritorio(Territorio* t);
+    string listaTerritorio(string n) const;
     string getAsString() const;
     Territorio* getTerritorio(string n) const;
+    Mundo* clone();
 };
 
 
