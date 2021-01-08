@@ -11,8 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TPPOO.dir/main.cpp.obj"
   "TPPOO.exe"
   "TPPOO.exe.manifest"
-  "TPPOO.lib"
   "TPPOO.pdb"
+  "libTPPOO.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

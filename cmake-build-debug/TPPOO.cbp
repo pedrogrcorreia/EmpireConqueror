@@ -4,145 +4,143 @@
 	<Project>
 		<Option title="TPPOO"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="msvc8"/>
+		<Option compiler="gcc"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/pedro/CLionProjects/TPPOO/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TPPOO">
-				<Option output="C:/Users/pedro/CLionProjects/TPPOO/cmake-build-debug/TPPOO.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/pedro/CLionProjects/TPPOO/cmake-build-debug"/>
+				<Option output="C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/TPPOO.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="msvc8"/>
+				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 TPPOO"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 TPPOO"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TPPOO/fast">
-				<Option output="C:/Users/pedro/CLionProjects/TPPOO/cmake-build-debug/TPPOO.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/pedro/CLionProjects/TPPOO/cmake-build-debug"/>
+				<Option output="C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/TPPOO.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="msvc8"/>
+				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\ATLMFC\include"/>
-					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
-					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/mingw32"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include/c++/backward"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/../../../../include"/>
+					<Add directory="c:\mingw\bin\../lib/gcc/mingw32/9.2.0/include-fixed"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 TPPOO/fast"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 TPPOO/fast"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/pedro/CLionProjects/TPPOO/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/pedro/CLionProjects/TPPOO/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f C:\Users\pedro\CLionProjects\TPPOO\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/MinGW/bin/mingw32-make.exe -f &quot;C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Continente.cpp">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Continente.cpp">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Continente.h">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Continente.h">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Ilha.cpp">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Ilha.cpp">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Ilha.h">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Ilha.h">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Imperio.cpp">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Imperio.cpp">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Imperio.h">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Imperio.h">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Jogo.cpp">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Jogo.cpp">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Jogo.h">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Jogo.h">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Mundo.cpp">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Mundo.cpp">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Mundo.h">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Mundo.h">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Tecnologias.cpp">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Tecnologias.cpp">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Tecnologias.h">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Tecnologias.h">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Territorio.cpp">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Territorio.cpp">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/Territorio.h">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Territorio.h">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/TiposContinente.cpp">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/TiposContinente.cpp">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/TiposContinente.h">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/TiposContinente.h">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/TiposIlha.cpp">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/TiposIlha.cpp">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/TiposIlha.h">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/TiposIlha.h">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/main.cpp">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/main.cpp">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/utils.h">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/utils.h">
 			<Option target="TPPOO"/>
 		</Unit>
-		<Unit filename="C:/Users/pedro/CLionProjects/TPPOO/CMakeLists.txt">
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
