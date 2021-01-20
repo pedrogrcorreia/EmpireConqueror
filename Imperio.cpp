@@ -59,8 +59,8 @@ bool Imperio::addMilitar() {
 
 bool Imperio::maisOuro(){
     if(prod >= 2){
-        prod = prod - 2;
-        ouro = ouro + 1;
+        addProd(-2);
+        addOuro(1);
         return true;
     }
     return false;
@@ -68,8 +68,8 @@ bool Imperio::maisOuro(){
 
 bool Imperio::maisProd(){
     if(ouro >= 2){
-        ouro = ouro - 2;
-        prod = prod + 1;
+        addOuro(-2);
+        addProd(1);
         return true;
     }
     return false;
