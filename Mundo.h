@@ -19,6 +19,7 @@ public:
     ~Mundo();
     bool addTerritorio(Territorio* t);
     string listaTerritorio(string n) const;
+    int getSize() const;
     string getAsString() const;
     Territorio* getTerritorio(string n) const;
     Mundo* clone();

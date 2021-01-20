@@ -12,6 +12,7 @@ class Continente: public Territorio{
     const int win = 1;
 public:
     Continente(string a, int b);
+    virtual int getWin() const;
 };
 
 

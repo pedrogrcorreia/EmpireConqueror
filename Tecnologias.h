@@ -12,17 +12,21 @@
 using namespace std;
 
 class Tecnologias {
-    map<string, pair<bool, int>> mTec = { {"Drones militares", {false,3} },
-                                         {"Misseis teleguiados", {false,4} },
-                                         { "Defesas territoriais", {false,4} },
-                                         { "Bolsa de valores", {false, 2} },
-                                         { "Banco central", {false, 3}}
+    map<pair<string,string>, pair<bool, int>> mTec = {
+            { {"Drones militares", "Aumenta forca militar para 5."}, {false, 3} },
+            { {"Misseis teleguiados", "Necessario para conquistar ilhas."}, {false, 4} },
+            { {"Defesas territoriais", "Acrescenta 1 de resistencia a um territorio invadido"}, {false, 4} },
+            { {"Bolsa de valores",     "Permite trocas entre ouro e produtos"}, {false, 2} },
+            { {"Banco central",        "Aumenta a capacidade do cofre e armazem para 5."}, {false, 3} }
     };
 public:
-    int addTec(string tec, int v);
+    bool addTec(string tec);
     bool checkTecnologia(string tec);
-    string getTecnologias()const;
-    string getAsString()const;
+    int getPreco(string n);
+    int getNTecnologias() const;
+    string getTecnologias() const;
+    string getTecnologiasN() const;
+    string getAsString() const;
 };
 
 

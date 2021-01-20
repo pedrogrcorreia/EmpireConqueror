@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Pedro Correia/Desktop/TP/TPPOO/Continente.cpp" "C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/CMakeFiles/TPPOO.dir/Continente.cpp.obj"
   "C:/Users/Pedro Correia/Desktop/TP/TPPOO/Ilha.cpp" "C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/CMakeFiles/TPPOO.dir/Ilha.cpp.obj"
   "C:/Users/Pedro Correia/Desktop/TP/TPPOO/Imperio.cpp" "C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/CMakeFiles/TPPOO.dir/Imperio.cpp.obj"
+  "C:/Users/Pedro Correia/Desktop/TP/TPPOO/Interface.cpp" "C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/CMakeFiles/TPPOO.dir/Interface.cpp.obj"
   "C:/Users/Pedro Correia/Desktop/TP/TPPOO/Jogo.cpp" "C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/CMakeFiles/TPPOO.dir/Jogo.cpp.obj"
   "C:/Users/Pedro Correia/Desktop/TP/TPPOO/Mundo.cpp" "C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/CMakeFiles/TPPOO.dir/Mundo.cpp.obj"
   "C:/Users/Pedro Correia/Desktop/TP/TPPOO/Tecnologias.cpp" "C:/Users/Pedro Correia/Desktop/TP/TPPOO/cmake-build-debug/CMakeFiles/TPPOO.dir/Tecnologias.cpp.obj"

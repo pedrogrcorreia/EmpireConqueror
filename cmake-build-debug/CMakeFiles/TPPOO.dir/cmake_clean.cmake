@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/TPPOO.dir/Continente.cpp.obj"
   "CMakeFiles/TPPOO.dir/Ilha.cpp.obj"
   "CMakeFiles/TPPOO.dir/Imperio.cpp.obj"
+  "CMakeFiles/TPPOO.dir/Interface.cpp.obj"
   "CMakeFiles/TPPOO.dir/Jogo.cpp.obj"
   "CMakeFiles/TPPOO.dir/Mundo.cpp.obj"
   "CMakeFiles/TPPOO.dir/Tecnologias.cpp.obj"

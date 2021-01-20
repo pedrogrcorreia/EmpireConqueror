@@ -223,6 +223,33 @@ Imperio.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TPPOO.dir\build.make CMakeFiles/TPPOO.dir/Imperio.cpp.s
 .PHONY : Imperio.cpp.s
 
+Interface.obj: Interface.cpp.obj
+
+.PHONY : Interface.obj
+
+# target to build an object file
+Interface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TPPOO.dir\build.make CMakeFiles/TPPOO.dir/Interface.cpp.obj
+.PHONY : Interface.cpp.obj
+
+Interface.i: Interface.cpp.i
+
+.PHONY : Interface.i
+
+# target to preprocess a source file
+Interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TPPOO.dir\build.make CMakeFiles/TPPOO.dir/Interface.cpp.i
+.PHONY : Interface.cpp.i
+
+Interface.s: Interface.cpp.s
+
+.PHONY : Interface.s
+
+# target to generate assembly for a file
+Interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TPPOO.dir\build.make CMakeFiles/TPPOO.dir/Interface.cpp.s
+.PHONY : Interface.cpp.s
+
 Jogo.obj: Jogo.cpp.obj
 
 .PHONY : Jogo.obj
@@ -430,6 +457,9 @@ help:
 	@echo ... Imperio.obj
 	@echo ... Imperio.i
 	@echo ... Imperio.s
+	@echo ... Interface.obj
+	@echo ... Interface.i
+	@echo ... Interface.s
 	@echo ... Jogo.obj
 	@echo ... Jogo.i
 	@echo ... Jogo.s

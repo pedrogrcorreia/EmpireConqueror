@@ -12,6 +12,7 @@ class Ilha: public Territorio{
     const int win = 2;
 public:
     Ilha(string a, int b);
+    virtual int getWin() const;
 };
 
 

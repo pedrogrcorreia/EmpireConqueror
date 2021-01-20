@@ -16,22 +16,23 @@ class Territorio {
     int res;
 protected:
     Jogo* jogo;
-    int conquistado = 0;
+    int conquistado = -1;
 public:
     Territorio(string a, int b);
     virtual ~Territorio(){
         cout << "Destruindo " << nome << ", "; // debug
     }
     bool ligaJogo(Jogo* j);
+    void conquista();
+    bool checkConquista();
+    void invade();
     string getNome() const;
     int getRes() const;
-    string getAsString() const;
-    void conquista(){conquistado = 1;}
-    virtual int addOuro();
-    virtual int addProd();
-    virtual Territorio* clone(){
-        return new Territorio(*this);
-    }
+    virtual string getAsString() const;
+    virtual int addOuro() const;
+    virtual int addProd() const;
+    virtual int getWin() const;
+    virtual Territorio* clone();
 };
 
 

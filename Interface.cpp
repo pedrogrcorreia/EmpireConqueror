@@ -4,10 +4,19 @@
 
 #include "Interface.h"
 #include <iostream>
-#include <sstream>
 #include <fstream>
 
-Interface::Interface(Jogo* jogo):j(jogo){};
+Interface::Interface(){
+    Jogo* j = new Jogo("Inicial");
+    jogos.push_back(j);
+    ativo = jogos[0];
+};
+
+Interface::~Interface(){
+    for(auto it : jogos){
+        delete it;
+    }
+}
 
 int Interface::validaCmd(string c) const{
     istringstream iss(c);
@@ -38,6 +47,15 @@ int Interface::validaTecnologia(string n) const{
     return -1;
 }
 
+int Interface::validaEvento(string n) const{
+    for(int i=0; i<eventos.size(); i++){
+        if(n == eventos[i]){
+            return i;
+        }
+    }
+    return -1;
+}
+
 string Interface::cria(istringstream& i) const{
     string nome;
     int n = 1, vN = -1;
@@ -53,7 +71,7 @@ string Interface::cria(istringstream& i) const{
     }
     else{
         for(int i=0; i<n; i++) {
-            if (!j->addTerritorio(territorios[vN])) {
+            if (!ativo->addTerritorio(territorios[vN])) {
                 return "Impossivel criar territorios.\n";
             }
         }
@@ -90,10 +108,10 @@ string Interface::lista(istringstream& i)const{
     string nome;
     i >> nome;
     if(nome.empty()){
-        return j->getAsString();
+        return ativo->getAsString();
     }
     else{
-        return j->listaTerritorio(nome);
+        return ativo->listaTerritorio(nome);
     }
 }
 
@@ -101,26 +119,166 @@ string Interface::adquire(istringstream& i) const{
     string nome, comp;
     int vT = -1;
     i >> nome;
-    if(i >> comp){
+    while(i >> comp){
         nome += " "+comp;
     }
     vT = validaTecnologia(nome);
     if(vT == -1){
-        return "Nome da tecnologia errado. Tente novamente.";
+        return "Nome da tecnologia errado. Tente novamente.\n";
     }
     else {
-        return j->addTecnologia(nome);
+        return ativo->addTecnologia(nome);
     }
 }
 
-void Interface::config(){
+string Interface::grava(istringstream& i){
+    string nome, comp;
+    i >> nome;
+    while(i >> comp){
+        nome += " "+comp;
+    }
+    Jogo* novo = new Jogo(nome);
+    *novo = *ativo;
+    jogos.push_back(novo);
+    return "Jogo gravado com sucesso.";
+}
+
+string Interface::carregaJogo(istringstream& i){
+    string nome, comp;
+    i >> nome;
+    while(i >> comp){
+        nome += " "+comp;
+    }
+    for(auto it : jogos){
+        if(it->getNome() == nome){
+            ativo = it;
+            return it->getNome() + " carregado com sucesso.\n";
+        }
+    }
+    return "Impossivel carregar jogo\n";
+}
+
+string Interface::apaga(istringstream& i){
+    string nome, comp, r;
+    i >> nome;
+    while(i >> comp){
+        nome += " "+comp;
+    }
+    if(nome == "Inicial"){
+        return "Impossivel apagar jogo Inicial.\n";
+    }
+    auto it = jogos.begin();
+    while (it < jogos.end()){
+        if ((*it)->getNome() == nome) {
+            if(ativo == *it){
+                ativo = jogos[0];
+            }
+            delete *it;
+            it = jogos.erase(it);
+            r.append("Jogo apagado com sucesso.\n");
+        }
+        else
+            it++;
+    }
+    if(r.empty()){
+        r.append("Jogo nao existe.\n");
+    }
+    return r;
+}
+
+string Interface::debug(istringstream& i, int vCmd){
+    string cmd, nome, comp;
+    if(vCmd == 13){
+        i >> cmd;
+        if(cmd == "terr"){
+            i >> nome;
+            return ativo->addTerritorioDebug(nome);
+        }
+        else if(cmd == "tec"){
+            i >> nome;
+            while(i >> comp){
+                nome += " "+comp;
+            }
+            int vTec = validaTecnologia(nome);
+            if(vTec != -1) {
+                return ativo->addTecnologiaDebug(nome);
+            }
+            else{
+                return "Tecnologia nao existe.\n";
+            }
+        }
+        else {
+            return "Parametro invalido.\n";
+        }
+    }
+    if(vCmd == 14){
+        i >> cmd;
+        int n;
+        if(cmd == "ouro"){
+            i >> n;
+            return ativo->addOuroDebug(n);
+        }
+        else if(cmd == "prod"){
+            i >> n;
+            return ativo->addProdDebug(n);
+        }
+        else{
+            return "Parametro invalido.\n";
+        }
+    }
+    if(vCmd == 15){
+        int vEve;
+        i >> cmd;
+        vEve = validaEvento(cmd);
+        if(vEve == -1){
+            return "Evento nao existe.\n";
+        }
+        else {
+            string ret = ativo->evento(vEve);
+            if(ret == "Perdeu.\n"){
+                f = 1;
+            }
+            return ret;
+        }
+    }
+    return "ERRO.\n";
+}
+
+void Interface::start(){
+    if(config()){
+        fim();
+        return;
+    }
+    while(ativo->getTurno() < 12){
+        if(PFase()){
+            fim();
+            return;
+        }
+        if(SFase()){
+            fim();
+            return;
+        }
+        if(TFase()){
+            fim();
+            return;
+        }
+        if(QFase()){
+            fim();
+            return;
+        }
+    }
+    fim();
+    return;
+}
+
+bool Interface::config(){
     string cmd;
     int vCmd;
-    if(!j->criaJogo()){
+    if(!jogos[0]->criaJogo()){
         cout << "Impossivel jogar. Tente novamente." << endl;
     }
     cout << "Bem vindo." << endl;
-    while(1){
+    while(f != 1){
         cout << "Introduza o comando que pretende realizar: (avanca para terminar)" << endl;
         getline(cin, comando);
         istringstream iss(comando);
@@ -136,23 +294,42 @@ void Interface::config(){
             case 2:
                 cout << lista(iss) << endl;
                 break;
+            case 10:
+                cout << grava(iss) << endl;
+                break;
+            case 11:
+                cout << carregaJogo(iss) << endl;
+                break;
+            case 12:
+                cout << apaga(iss) << endl;
+                break;
+            case 13:
+                cout << debug(iss, vCmd) << endl;
+                break;
+            case 14:
+                cout << debug(iss, vCmd) << endl;
+                break;
+            case 15:
+                cout << debug(iss, vCmd) << endl;
+                break;
             case 3:
                 cout << "Configuracao concluida." << endl;
-                return;
+                return false;
             default:
                 cout << "Comando invalido para configuracao." << endl;
                 break;
         }
     }
+    return true;
 }
 
 
-void Interface::PFase(){
-    j->setTurno();
+bool Interface::PFase(){
+    ativo->setTurno();
     string cmd;
     int vCmd = -1;
     int acao = 0;
-    while(1){
+    while(f != 1){
         cout << "Introduza o comando que pretende realizar (passa/conquista/lista): (avanca para continuar)" << endl;
         getline(cin, comando);
         istringstream iss(comando);
@@ -167,14 +344,14 @@ void Interface::PFase(){
                     cout << "Nao tomou nenhuma acao nesta fase. (passa ou conquista)." << endl;
                     break;
                 }
-                return;
+                return false;
             case 4:
                 if(acao == 1){
                     cout << "Ja tomou uma acao nesta fase, por favor avance." << endl;
                 }
                 else {
                     iss >> cmd;
-                    cout << j->conquistaTerritorio(cmd);
+                    cout << ativo->conquistaTerritorio(cmd);
                 }
                 acao = 1;
                 break;
@@ -184,25 +361,84 @@ void Interface::PFase(){
                 }
                 acao = 1;
                 break;
+            case 10:
+                cout << grava(iss) << endl;
+                break;
+            case 11:
+                cout << carregaJogo(iss) << endl;
+                break;
+            case 12:
+                cout << apaga(iss) << endl;
+                break;
+            case 13:
+                cout << debug(iss, vCmd) << endl;
+                break;
+            case 14:
+                cout << debug(iss, vCmd) << endl;
+                break;
+            case 15:
+                cout << debug(iss, vCmd) << endl;
+                break;
             default:
                 cout << "Comando invalido para esta fase." << endl;
                 break;
         }
     }
+    return true;
 }
 
-void Interface::SFase() {
+bool Interface::SFase() {
     cout << "Segunda Fase" << endl;
-    j->addRecursos();
-    return;
+    ativo->addRecursos();
+    string cmd;
+    int vCmd = -1;
+    while(f != 1){
+        cout << "Pretende trocar ouro por produtos ou vice-versa? (maisprod ou maisouro): (avanca para continuar)" << endl;
+        getline(cin, comando);
+        istringstream iss(comando);
+        iss >> cmd;
+        vCmd = validaCmd(cmd);
+        switch(vCmd){
+            case 2:
+                cout << lista(iss) << endl;
+                break;
+            case 3:
+                return false;
+            case 6:
+                cout << ativo->maisOuro() << endl;
+                break;
+            case 7:
+                cout << ativo->maisProd() << endl;
+                break;
+            case 10:
+                cout << grava(iss) << endl;
+                break;
+            case 11:
+                cout << carregaJogo(iss) << endl;
+                break;
+            case 12:
+                cout << apaga(iss) << endl;
+                break;
+            case 13:
+                cout << debug(iss, vCmd) << endl;
+                break;
+            case 14:
+                cout << debug(iss, vCmd) << endl;
+                break;
+            case 15:
+                cout << debug(iss, vCmd) << endl;
+                break;
+        }
+    }
+    return true;
 }
 
-void Interface::TFase() {
+bool Interface::TFase() {
     cout << "Terceira Fase" << endl;
     string cmd;
     int vCmd = -1;
     int tec = 0, mil = 0;
-    while(1){
+    while(f != 1){
         cout << "Introduza o comando que pretende realizar (adquire/maismilitar): (avanca para continuar)" << endl;
         getline(cin, comando);
         istringstream iss(comando);
@@ -213,7 +449,7 @@ void Interface::TFase() {
                 cout << lista(iss) << endl;
                 break;
             case 3:
-                return;
+                return false;
             case 9:
                 if(tec != 1) {
                     cout << adquire(iss);
@@ -225,20 +461,55 @@ void Interface::TFase() {
                 break;
             case 8:
                 if(mil != 1) {
-                    cout << j->addMilitar();
+                    cout << ativo->addMilitar();
                     mil = 1;
                 }
                 else {
                     cout << "Ja adicionou forca nesta ronda." << endl;
                 }
                 break;
+            case 10:
+                cout << grava(iss) << endl;
+                break;
+            case 11:
+                cout << carregaJogo(iss) << endl;
+                break;
+            case 12:
+                cout << apaga(iss) << endl;
+                break;
+            case 13:
+                cout << debug(iss, vCmd) << endl;
+                break;
+            case 14:
+                cout << debug(iss, vCmd) << endl;
+                break;
+            case 15:
+                cout << debug(iss, vCmd) << endl;
+                break;
             default:
                 cout << "Comando invalido para esta fase." << endl;
                 break;
         }
     }
+    return true;
 }
 
-void Interface::QFase() {
+bool Interface::QFase() {
+    cout << "Quarta fase" << endl;
+    string ret = ativo->evento(-1);
+    if(ret == "Perdeu.\n"){
+        cout << "Invasao sucedida. Perdeu o jogo." << endl;
+        fim();
+        return true;
+    }
+    else {
+        cout << ret << endl;
+        return false;
+    }
+}
+
+void Interface::fim(){
+    cout << "Acabou o jogo" << endl;
+    cout << ativo->fim();
     return;
 }

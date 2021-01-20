@@ -98,6 +98,12 @@
 		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Imperio.h">
 			<Option target="TPPOO"/>
 		</Unit>
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Interface.cpp">
+			<Option target="TPPOO"/>
+		</Unit>
+		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Interface.h">
+			<Option target="TPPOO"/>
+		</Unit>
 		<Unit filename="C:/Users/Pedro Correia/Desktop/TP/TPPOO/Jogo.cpp">
 			<Option target="TPPOO"/>
 		</Unit>

@@ -25,6 +25,10 @@ Territorio* Mundo::getTerritorio(string n) const {
     return nullptr;
 }
 
+int Mundo::getSize()const{
+    return m.size();
+}
+
 string Mundo::listaTerritorio(string n) const {
     for(auto it : m){
         if(it->getNome() == n){
@@ -38,7 +42,9 @@ string Mundo::getAsString() const{
     ostringstream os;
     os << "O Mundo tem os seguintes territorios: " << endl;
     for(auto it : m){
-        os << it->getAsString() << endl;
+        if(!it->checkConquista()) {
+            os << it->getAsString() << endl;
+        }
     }
     return os.str();
 }

@@ -12,14 +12,16 @@ class Refugio: public Ilha{
     static int count;
 public:
     Refugio();
-    virtual int addOuro();
+    virtual int addOuro() const;
+    virtual Territorio* clone();
 };
 
 class Pescaria: public Ilha{
     static int count;
 public:
     Pescaria();
-    virtual int addProd();
+    virtual int addProd() const;
+    virtual Territorio* clone();
 };
 
 
