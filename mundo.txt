@@ -1,4 +1,0 @@
-cria duna 2
-mostrar erro
-cria planicie 4
-cria territorio 5
