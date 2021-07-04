@@ -1,6 +1,15 @@
-# POO2021
-Trabalho Pratico POO 20/21
+# Empire Conqueror
 
-Projeto no ambito da UC de Programação Orientada a Objectos.
+## Trabalho Prático Programação Orientada a Objectos 2020/2021 ISEC
 
-Jogo de conquista de territorios desenvolvido em C++.
+### Empire Conqueror - C++
+
+- Interface - Logic separated
+- OOP view
+
+### Run
+- CMake included
+- `main`
+
+### Know issues
+- Can't terminate the game on console, needs to hard terminate (Ctrl+C on Windows) (Wasn't required for the project)
