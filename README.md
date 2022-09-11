@@ -1,13 +1,18 @@
 # Empire Conqueror
 
-## Trabalho Prático Programação Orientada a Objectos 2020/2021 ISEC
+## Conquest game on console/terminal
+Project developed to college focused on the following learnings:
+- C++ introduction
+- OOP introduction
+- Interface and Logic separation
 
-### Empire Conqueror - C++
+## Description
+Territory conquest game implemented to be played on console or terminal.<br>
+The game has a user input interface based on text and option menus.<br>
+The World is defined before starting a new game.<br>
+The territories can be created using a command or read from a `.txt` file.
 
-- Interface - Logic separated
-- OOP view
-
-### Run
+## Run
 - CMake included
 - `main`
 
